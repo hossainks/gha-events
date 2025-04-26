@@ -4,8 +4,8 @@ on:
     branches:
       - main
     paths-ignore:
-      - '.github/workflows/deploy.yml'
-      - '.src/components/MainContent.test.jsx'
+      - '.github/workflows/*'
+      - '.src/components/*'
 jobs:
   test:
     runs-on: ubuntu-latest
