@@ -5,6 +5,7 @@ on:
       - main
     paths-ignore:
       - '.github/workflows/deploy.yml'
+      - '.src/components/MainContent.test.jsx'
 jobs:
   test:
     runs-on: ubuntu-latest
