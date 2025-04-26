@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/workflows/deploy.yml'
 jobs:
   test:
     runs-on: ubuntu-latest
