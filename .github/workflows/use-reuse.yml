@@ -68,7 +68,7 @@ jobs:
           path: dist
   deploy:
     needs: build
-    uses: ./.github/workflows/reuseable.yml
+    uses: hossainks/gha-events/.github/workflows/reuseable.yml@main
 
   report:
     needs: [lint, deploy]
