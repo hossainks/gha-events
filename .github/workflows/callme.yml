@@ -1,8 +1,0 @@
-name: Call me
-on: workflow_call
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Output Information
-        run: echo "Deploying and Uploading artifacts"

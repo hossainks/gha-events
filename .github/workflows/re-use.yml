@@ -1,4 +1,4 @@
-name: Reuseable Workflow
+name: Workflow for Reuse Call
 on:
   push:
     branches:
@@ -68,7 +68,9 @@ jobs:
           path: dist
   deploy:
     needs: build
-    uses: ./.github/workflows/callme.yml
+    uses: ./.github/workflows/reuseable.yml
+    with:
+      artifact_name: dist-files
 
   report:
     needs: [lint, deploy]
