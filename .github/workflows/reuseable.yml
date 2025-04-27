@@ -7,6 +7,10 @@ on:
         required: false
         default: dist
         type: string
+    secrets:
+      REUSE_SECREAT:
+        required: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

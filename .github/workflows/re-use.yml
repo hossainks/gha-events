@@ -71,6 +71,8 @@ jobs:
     uses: ./.github/workflows/reuseable.yml
     with:
       artifact_name: dist-files
+    secrets:
+      REUSE_SECREAT: ${{ secrets.REUSE_SECREAT }}
 
   report:
     needs: [lint, deploy]
