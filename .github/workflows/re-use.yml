@@ -74,6 +74,13 @@ jobs:
     secrets:
       REUSE_SECREAT: ${{ secrets.REUSE_SECREAT }}
 
+  print-deploy:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Deploy Information
+        run: 'Deploy job result: ${{ needs.deploy.outputs.result }}'
+
   report:
     needs: [lint, deploy]
     if: failure()

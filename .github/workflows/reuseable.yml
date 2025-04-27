@@ -10,9 +10,15 @@ on:
     secrets:
       REUSE_SECREAT:
         required: true
+    outputs:
+      result:
+        description: The result of the deploy job
+        value: ${{ jobs.deploy.outputs.outcome }}
 
 jobs:
   deploy:
+    outputs:
+      outcome: ${{ steps.set-output.outputs.step-result }}
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifacts
@@ -23,3 +29,6 @@ jobs:
         run: ls
       - name: Output Information
         run: echo "Deploying and Uploading artifacts"
+      - name: Set results output
+        id: set-output
+        run: echo "step-result=success" >> $GITHUB_OUTPUT
