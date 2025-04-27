@@ -2,7 +2,7 @@ name: Matrix Demo
 on:
   push:
     branches:
-      - main
+      - dev
 jobs:
   install:
     continue-on-error: true
