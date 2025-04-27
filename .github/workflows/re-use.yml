@@ -66,7 +66,7 @@ jobs:
         with:
           name: dist-files
           path: dist
-  deploy:
+  deployment:
     needs: build
     uses: ./.github/workflows/reuseable.yml
     with:
@@ -75,14 +75,14 @@ jobs:
       REUSE_SECREAT: ${{ secrets.REUSE_SECREAT }}
 
   print-deploy:
-    needs: deploy
+    needs: deployment
     runs-on: ubuntu-latest
     steps:
       - name: Print Deploy Information
-        run: 'Deploy job result: ${{ needs.deploy.outputs.result }}'
+        run: 'Deploy job result: ${{ needs.deployment.outputs.result }}'
 
   report:
-    needs: [lint, deploy]
+    needs: [lint, deployment]
     if: failure()
     runs-on: ubuntu-latest
     steps:
